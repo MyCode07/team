@@ -1,14 +1,11 @@
 "use strict"
 
-import { lockPadding } from '../utils/lockPadding.js';
-
 const url = 'https://yanteam.ru/wp-content/themes/blank-sheet/assets/curl.php';
 
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form')
+    const form = document.querySelector('.popup form')
     const thanksPopup = document.querySelector('.popup#thanks');
     const failPopup = document.querySelector('.popup#error');
-    const laoder = document.querySelector('.loader');
 
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
@@ -202,34 +199,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function sentMessage() {
-        const activePopup = document.querySelector('.popup._open');
-        if (activePopup) activePopup.classList.remove('_open');
 
-        thanksPopup.classList.add('_open')
-        lockPadding();
-
-        const loader = document.querySelector('.loader');
-        if (loader) {
-            loader.remove();
-        }
     }
 
     function failMessage() {
-        failPopup.classList.add('_open')
-        lockPadding();
 
-        const loader = document.querySelector('.loader');
-        if (loader) {
-            loader.remove();
-        }
     }
 
     function hideLoader() {
-        laoder.classList.remove('_open')
     }
 
     function showLoader() {
-        laoder.classList.add('_open')
     }
 
     function resetForm() {

@@ -184,7 +184,7 @@ if (document.querySelector('.main-swiper')) {
 
             const activeWord = words[swiper.realIndex].querySelectorAll('i');
             const activeImage = wrappers[swiper.realIndex];
-            const menuImg = swipermenu.slides[swiper.realIndex];
+            const menuImg = swipermenu.slides[swiper.realIndex].querySelector('.img');
             console.log(activeWord);
 
             if (targetEl.classList.contains('_active')) {
@@ -202,13 +202,12 @@ if (document.querySelector('.main-swiper')) {
                         sliderMenu.classList.add('_open')
                         activeImage.style.display = 'block';
 
-
                         gsap.to(images, {
                             duration: 0.8,
                             display: 'none'
                         })
 
-                        gsap.to('.menu-swiper .swiper-slide img', {
+                        gsap.to('.menu-swiper .swiper-slide .img', {
                             clipPath: "inset(0% 0% 0% 0%)",
                             stagger: 0.05,
                             duration: 0.8,
@@ -219,6 +218,13 @@ if (document.querySelector('.main-swiper')) {
                             }
                         })
 
+                        gsap.to('.menu-swiper .swiper-slide span', {
+                            y: 0,
+                            duration: 1.2,
+                            stagger: 0.05,
+                            delay: 0.3,
+                            ease: "power4.inOut",
+                        })
                     }
                 });
 
@@ -237,7 +243,7 @@ if (document.querySelector('.main-swiper')) {
 
                 animateToFullMenuImg(activeImage, menuImg)
 
-                gsap.to('.menu-swiper .swiper-slide img', {
+                gsap.to('.menu-swiper .swiper-slide .img', {
                     clipPath: "inset(100% 0% 0% 0%)",
                     duration: 1.2,
                     stagger: 0.05,
@@ -249,6 +255,14 @@ if (document.querySelector('.main-swiper')) {
                         swiper.enable()
                         sliderMenu.classList.remove('_open')
                     }
+                })
+
+                gsap.to('.menu-swiper .swiper-slide span', {
+                    y: '100%',
+                    duration: 1.2,
+                    stagger: 0.05,
+                    delay: 0.3,
+                    ease: "power4.inOut",
                 })
 
                 gsap.fromTo(activeWord,

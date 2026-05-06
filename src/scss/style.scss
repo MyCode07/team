@@ -26,10 +26,13 @@
 @import "common/menu";
 // load grid
 @import "parts/grid";
-// load cards
+// load section
 @import "parts/section";
-
+// load loader
+@import "parts/loader";
 // load slider
+@import "parts/slider";
+
 // @import "parts/slider";
 .pages {
     position: fixed;

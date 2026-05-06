@@ -1,0 +1,198 @@
+<div class="popup">
+    <div class="popup-scroll">
+        <div class="popup-item popup-brief" id="brief">
+            <h3>Заполните форму, и мы свяжемся
+                с вами для обсуждения вашего проекта.</h3>
+            <form action="" class="form">
+                <div class="form__group">
+                    <div class="form__item" data-required>
+                        <input type="text" placeholder="Ваше имя *" name="your_name">
+                    </div>
+                    <div class="form__item" data-required>
+                        <input type="text" class="_mask-phone" placeholder="Номер телефона *" name="your_phone">
+                    </div>
+                    <div class="form__item" data-required>
+                        <input type="text" placeholder="Telegram *" name="telegram">
+                    </div>
+                    <div class="form__item" data-required>
+                        <input type="text" placeholder="Должность" name="position">
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="">
+                        <p>Опишите задачу</p>
+                        <div class="form__row">
+                            <div class="form__textarea form__item" data-required>
+                                <textarea name="massage" placeholder="Сообщение *"></textarea>
+                            </div>
+                            <div class="form__file form__item">
+                                <label for="file">
+                                    <span class="value filename">+Прикрепить файл</span>
+                                    <input id="file" name="file" type="file"
+                                        accept="application/msword, application/vnd.ms-powerpoint, text/plain, application/pdf">
+                                </label>
+                                <div class="_delete-file">Удалить</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__group" data-checkbox-container id="budget">
+                    <p>Планируемый бюджет на проект</p>
+                    <div class="form__item">
+                        <label for="200">
+                            <span class="checkbox"></span>
+                            <span class="value">до 200.000 рублей</span>
+                            <input id="200" name="price" type="radio" value="до 200.000 рублей">
+                        </label>
+                    </div>
+                    <div class="form__item">
+                        <label for="200-500">
+                            <span class="checkbox"></span>
+                            <span class="value">200.000 – 500.000 рублей</span>
+                            <input id="200-500" name="price" type="radio" value="200.500.000 рублей">
+                        </label>
+                    </div>
+                    <div class="form__item">
+                        <input type="text" name="summ" id="summ" placeholder="Свой вариант">
+                    </div>
+                </div>
+                <div class="form__group" data-checkbox-container id="conn-type">
+                    <p>Удобный способ связи</p>
+                    <div class="form__item">
+                        <label for="contact-tg">
+                            <span class="checkbox"></span>
+                            <span class="value">Telegram</span>
+                            <input id="contact-tg" name="contact" type="radio" value="Telegram">
+                        </label>
+                    </div>
+                    <div class="form__item">
+                        <label for="contact-phone">
+                            <span class="checkbox"></span>
+                            <span class="value">Телефонный звонок</span>
+                            <input id="contact-phone" name="contact" type="radio" value="Телефонный звонок">
+                        </label>
+                    </div>
+                    <div class="form__item">
+                        <label for="contact-email">
+                            <span class="checkbox"></span>
+                            <span class="value">Email</span>
+                            <input id="contact-email" name="contact" type="radio" value="email">
+                        </label>
+                    </div>
+                    <div class="form__item">
+                        <input type="text" name="summ" id="summ" placeholder="Свой вариант">
+                    </div>
+                </div>
+
+                <div class="_hide error-msgs">
+                    <p>
+                        <label>Поля:</label>
+                        <span></span>
+                        <label> обязательны к заполннию.</label>
+                    </p>
+                </div>
+
+                <div class="form__submit">
+                    <p>Нажимая на кнопку «Отправить», <br>
+                        я соглашаюсь с <a href="/privacy-policy/" target="_blank">политикой<br> конфиденциальности</a>
+                    </p>
+                    <button class="_btn _btn-black">Отправить</button>
+                </div>
+            </form>
+        </div>
+        <div class="popup-item popup-services" id="services">
+            <div class="service-item">
+                <div class="service-item__top">
+                    <span class="h3">Дизайн интерфейсов</span>
+                    <div class="icon">
+                        <svg width="11" height="9" viewBox="0 0 11 9">
+                            <use xlink:href='img/svg/icons.svg#arrow' />
+                        </svg>
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="@img/service-design.png" alt="">
+                    <div class="labels">
+                        <span>Веб-сайты</span>
+                        <span>Мобильные приложения</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-item__top">
+                    <span class="h3">Разработка</span>
+                    <div class="icon">
+                        <svg width="11" height="9" viewBox="0 0 11 9">
+                            <use xlink:href='img/svg/icons.svg#arrow' />
+                        </svg>
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="@img/service-dev.png" alt="">
+                    <div class="labels">
+                        <span>Сайты</span>
+                        <span>Сервисы</span>
+                        <span>Приложения</span>
+                        <span>Интернет-магазины</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-item__top">
+                    <span class="h3">Продвижение</span>
+                    <div class="icon">
+                        <svg width="11" height="9" viewBox="0 0 11 9">
+                            <use xlink:href='img/svg/icons.svg#arrow' />
+                        </svg>
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="@img/service-seo.png" alt="">
+                    <div class="labels">
+                        <span>Аналитика</span>
+                        <span>Оптимизация</span>
+                        <span>Контент</span>
+                        <span>Ссылки</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-item popup-about" id="about">
+            <h3>YAN team. <br>
+                Kоманда, объединённая общими ценностями и стремлением к высокому качеству.</h3>
+            <p>Создаём понятные, функциональные и стильные решения, продумывая каждый проект так, чтобы он оставлял
+                заметный и
+                положительный результат.</p>
+            <p>Гарантируем надежное выполнение наших обязательств по договору, предоставляя вам полностью готовый
+                продукт, который
+                соответствует вашим ожиданиям.</p>
+
+            <hr>
+
+            <h3>Мы строим <br>
+                долгосрочные партнёрства,<br>
+                <span>а не просто сдаём проекты.</span>
+            </h3>
+            <p>Создаём понятные, функциональные и стильные решения, продумывая каждый проект так, чтобы он оставлял
+                заметный и
+                положительный результат.</p>
+            <p>Гарантируем надежное выполнение наших обязательств по договору, предоставляя вам полностью готовый
+                продукт, который
+                соответствует вашим ожиданиям.</p>
+
+            <div class="clients">
+                <label>Клиенты</label>
+                <div>
+                    <span>sports.ru</span>
+                    <span>berealfan.com</span>
+                    <span>origamitea.ru</span>
+                    <span>ucpsg.pro</span>
+                    <span>я-топ.com</span>
+                    <span>знакомый-юрист.рф</span>
+                    <span>advenity.ru</span>
+                    <span>контурпласт</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

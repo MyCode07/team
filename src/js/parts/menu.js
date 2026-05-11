@@ -47,9 +47,9 @@ document.addEventListener('click', function (e) {
                 targetEl.disabled = false
             }
         })
-
     }
 })
+
 
 function setBtnPosition(target) {
     const coords = target.getBoundingClientRect();

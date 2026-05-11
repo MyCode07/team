@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (error === 0) {
             form.classList.add('_sending');
-            showLoader();
 
             let response = await fetch(url, {
                 method: 'POST',
@@ -35,13 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 sentMessage(form)
                 form.reset();
                 form.classList.remove('_sending');
-                hideLoader();
                 resetForm()
             }
             else {
                 failMessage(form)
                 form.classList.remove('_sending');
-                hideLoader();
                 resetForm()
             }
         }
@@ -199,18 +196,49 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function sentMessage() {
-
+        popupMsgAction(true)
     }
 
     function failMessage() {
-
+        popupMsgAction(false)
     }
 
-    function hideLoader() {
+    function popupMsgAction(sent = true) {
+        const popupBrief = document.querySelector(`.popup-brief`);
+        const popupMsg = document.querySelector(`.popup-msg`);
+        popupBrief.classList.remove('_active')
+        setTimeout(() => {
+            popupBrief.style.display = 'none'
+        }, 600);
+
+        popupMsg.style.display = 'block'
+        popupMsg.classList.add('_active')
+
+        const sentMsg = popupMsg.querySelector('.success');
+        const failMsg = popupMsg.querySelector('.error');
+
+        if (sent) {
+            sentMsg.classList.add('_active')
+            failMsg.classList.remove('_active')
+        } else {
+            sentMsg.classList.remove('_active')
+            failMsg.classList.add('_active')
+        }
+
+        setTimeout(() => {
+            popupMsg.classList.remove('_active')
+            setTimeout(() => {
+                popupMsg.style.display = 'none'
+            }, 600);
+
+            sentMsg.classList.remove('_active')
+            failMsg.classList.remove('_active')
+
+            popupBrief.style.display = 'block'
+            popupBrief.classList.add('_active')
+        }, 5000);
     }
 
-    function showLoader() {
-    }
 
     function resetForm() {
         if (formFile) {
@@ -218,10 +246,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const fileNameElem = fileElem.querySelector('.filename');
             const deleteFileElem = fileElem.querySelector('._delete-file');
 
-            if (fileNameElem) fileNameElem.innerHTML = '+Прикрепить файл';
+            if (fileNameElem) {
+                fileNameElem.innerHTML = '+Прикрепить файл';
+            }
             formFile.value = '';
 
-            if (deleteFileElem) deleteFileElem.classList.remove('_active');
+            if (deleteFileElem) {
+                deleteFileElem.classList.remove('_active');
+            }
         }
     }
 

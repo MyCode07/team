@@ -98,6 +98,30 @@
         }
     }
 
+    // .popup-msg
+    &-msg {
+        min-height: 100%;
+
+        .success,
+        .error {
+            min-height: 100%;
+            gap: calc($margin * 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+
+            @media (max-width:1024px) {
+                gap: 10px;
+            }
+
+            &:not(._active) {
+                display: none;
+            }
+        }
+    }
+
     // .popup-about
     &-about {
         h3 {
